@@ -1,11 +1,10 @@
 (function() {
-
 	window.onload = function() {
 		var btnTw = document.getElementById("twitter-btn");
 		var btnFb = document.getElementById("facebook-btn");
 		var output = document.getElementById("question");
 		var listen = document.getElementById("check");
-		listen.onclick = checkanswer();
+		//listen.onclick = checkanswer();
 		//btnTw.onclick = twitteropen();
 		//btnFb.onclick = facebookopen();
 
@@ -32,12 +31,14 @@
 			"answer": "6"
 		}];
 
-		//console.log(quiz);
+		console.log(quiz);
+		console.log(questionnum);
+		console.log(gameplaying);
 
-		function checkanswer() {
+		listen.onclick = function checkanswer() {
 			if (gameplaying) {
 				var myanswer = document.getElementById("guess").value;
-				if (myanswer == quiz.questionnum.answer) {
+				if (myanswer == quiz[questionnum]['answer']) {
 					score++;
 				}
 				console.log(score);
@@ -50,7 +51,7 @@
 			} else {
 				setquiz(questionnum);
 			}
-		}
+		};
 
 		function setquiz(questionnum) {
 			if (gameplaying) {
