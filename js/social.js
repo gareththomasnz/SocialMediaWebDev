@@ -2,13 +2,14 @@
 
 	window.onload = function() {
 		var btnTw = document.getElementById("twitter-btn");
-                var btnFb = document.getElementById("facebook-btn");
-		//onclick="socialShare('twitter'); return false;"
-                btnTw.onclick = socialShare('twitter');
-                
-                
+		var btnFb = document.getElementById("facebook-btn");
 		var metatags = document.getElementsByTagName("meta");
+                var soCont = document.getElementById("share-cnt");
 		var shareurl = '';
+		soCont.onclick = socialShare('twitter');
+
+		//return false;
+
 
 		function getMetaTagInfo(tag) {
 			for (metatags, a = 0; a < metatags.length; a++) {
@@ -20,7 +21,7 @@
 		}
 
 
-		btnFb.onclick =  function facebookopen() {
+		btnFb.onclick = function facebookopen() {
 			FB.ui({
 				method: 'feed',
 				link: getMetaTagInfo("og:url"),
@@ -29,6 +30,11 @@
 				caption: '',
 				description: getMetaTagInfo("og:description")
 			});
+		};
+		btnTw.onclick = function twitteropen() {
+			description = 'Take a look at this ';
+			shareurl = 'https://twitter.com/intent/tweet?text=' + encodeURI(description) + '&url=http://www.discoveryvip.com';
+			window.open(shareurl, 'Share window', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');
 		};
 
 
