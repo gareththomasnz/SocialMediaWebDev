@@ -31,7 +31,7 @@
 			}
 			if (questionnum >= totalquestions) {
 				console.log('end game');
-				output.innerHTML = "game over your score is " + score + " correct out of " + totalquestions;
+				output.innerHTML = "Game over your score is " + score + " correct out of " + totalquestions;
 				gameplaying = false;
 			} else {
 				setquiz(questionnum);
