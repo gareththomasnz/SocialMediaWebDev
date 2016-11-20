@@ -4,17 +4,6 @@
 		var btnFb = document.getElementById("facebook-btn");
 		var output = document.getElementById("question");
 		var listen = document.getElementById("check");
-		//listen.onclick = checkanswer();
-		//btnTw.onclick = twitteropen();
-		//btnFb.onclick = facebookopen();
-
-		//return false;
-		//};
-
-		//FB block was here
-
-		//document.getElementById("check").addEventListener("click", checkanswer);
-
 		var questionnum = 0,
 			score = 0,
 			totalquestions = 3,
@@ -30,10 +19,6 @@
 			"question": "5+1=",
 			"answer": "6"
 		}];
-
-		console.log(quiz);
-		console.log(questionnum);
-		console.log(gameplaying);
 
 		listen.onclick = function checkanswer() {
 			if (gameplaying) {
@@ -59,9 +44,6 @@
 			}
 		}
 		setquiz(questionnum);
-
-		// Social Sharing Code START
-
 
 
 		btnFb.onclick = function facebookopen() {
