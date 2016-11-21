@@ -6,7 +6,7 @@
 		var metatags = document.getElementsByTagName("meta");
                 var soCont = document.getElementById("share-cnt");
 		var shareurl = '';
-		soCont.onclick = socialShare('twitter');
+		soCont.onclick = socialShare();
 
 		//return false;
 
